@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "npm",
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+  }
+}
