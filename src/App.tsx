@@ -66,6 +66,7 @@ const App: React.FC = () => {
   }
 
   const printFinalData = () => {
+    // TODO: conversion to flat data model is pending
     console.log(dataObj)
   }
 
