@@ -1,7 +1,7 @@
 import { SearchOutlined } from '@ant-design/icons'
 import { Button, Form, Input, Space, Table } from 'antd'
 import React, { useState } from 'react'
-import '../App.css'
+import '../App.scss'
 import Employees from './employees'
 
 interface Emp {

@@ -2,7 +2,8 @@ import { Button, Form, Table } from 'antd'
 import Department from 'components/department'
 import React from 'react'
 import { fetchData } from 'utils/companyTree'
-import './App.css'
+import './App.scss'
+import './components/department.scss'
 
 const App: React.FC = () => {
   const [dataObj, setDataObj] = React.useState([])
@@ -71,7 +72,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <Form component={false}>
         <Table
           className="components-table-demo-nested"

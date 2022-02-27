@@ -1,6 +1,7 @@
 import { Form, Input, Popconfirm, Table, Typography } from 'antd'
 import React, { useState } from 'react'
-import '../App.css'
+import '../App.scss'
+import './department.scss'
 
 interface Emp {
   name: string
