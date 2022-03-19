@@ -8,13 +8,8 @@ import './components/department.scss'
 const App: React.FC = () => {
   const [dataObj, setDataObj] = React.useState([])
 
-  async function loadData() {
-    const companyTree = await fetchData()
-    return companyTree
-  }
-
   React.useEffect(() => {
-    loadData().then((res) => {
+    fetchData().then((res) => {
       setDataObj(res)
     })
   }, [])
@@ -57,14 +52,9 @@ const App: React.FC = () => {
     },
   ]
 
-  const newCompanyData = []
-  for (let i = 0; i < dataObj.length; ++i) {
-    newCompanyData.push({
-      key: i,
-      companyName: dataObj[i].name,
-      childData: dataObj[i].children,
-    })
-  }
+  const newCompanyData = dataObj.map((data, index) => {
+    return { key: index, companyName: data.name, childData: data.children }
+  })
 
   const printFinalData = () => {
     // TODO: conversion to flat data model is pending

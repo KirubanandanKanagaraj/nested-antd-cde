@@ -9,10 +9,9 @@ export type BuildCompanyTreeParams = {
 
 const constructDepartmentObj = (empObj, depObj) => {
   for (let dep = 0; dep < depObj.length; dep++) {
-    depObj[dep].children = []
-    empObj.filter((item) => {
+    depObj[dep].children = empObj.filter((item) => {
       if (item.department_id === depObj[dep].id) {
-        depObj[dep].children.push(item)
+        return item
       }
     })
   }
@@ -21,10 +20,9 @@ const constructDepartmentObj = (empObj, depObj) => {
 
 const constructCompanyObj = (compObj, depObj) => {
   for (let comp = 0; comp < compObj.length; comp++) {
-    compObj[comp].children = []
-    depObj.filter((item) => {
+    compObj[comp].children = depObj.filter((item) => {
       if (item.company_id === compObj[comp].id) {
-        compObj[comp].children.push(item)
+        return item
       }
     })
   }
