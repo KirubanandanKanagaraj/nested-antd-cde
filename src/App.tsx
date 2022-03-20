@@ -16,17 +16,10 @@ const App: React.FC = () => {
 
   const expandedRowRender = (record) => {
     const deptObj = record.childData
-
     const depColumns = [{ title: 'Department', dataIndex: 'name', key: 'name' }]
-
-    const newDepData = []
-    for (let i = 0; i < deptObj.length; ++i) {
-      newDepData.push({
-        key: i,
-        name: deptObj[i].name,
-        childData: deptObj[i].children,
-      })
-    }
+    const newDepData = deptObj.map((data, index) => {
+      return { key: index, name: data.name, childData: data.children }
+    })
 
     const updateCompData = (updatedCompData) => {
       const newUpdatedData = dataObj

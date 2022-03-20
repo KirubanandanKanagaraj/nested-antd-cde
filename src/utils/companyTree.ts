@@ -37,8 +37,7 @@ export const buildCompanyTree = ({
   // code here and change the return afterwards
   const newDepObj = constructDepartmentObj(employeesFromApi, departmentsFromApi)
   const newCompanyObj = constructCompanyObj(companiesFromApi, newDepObj)
-
-  return newCompanyObj as CompanyTree
+  return newCompanyObj
 }
 
 export const fetchData = async () => {
