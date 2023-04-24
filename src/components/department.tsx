@@ -13,7 +13,13 @@ interface Emp {
 interface Props {
   depColumns: Array<{ title: string; dataIndex: string; key: string }>
   newDepData: Array<{ key: number; name: string; childData: Emp }>
-  updateCompData: any
+  updateCompData: (
+    newUpdatedData: Array<{
+      key: number
+      name: string
+      childData: Emp
+    }>
+  ) => void
 }
 
 const Department: React.FC<Props> = ({
@@ -22,8 +28,8 @@ const Department: React.FC<Props> = ({
   updateCompData,
 }) => {
   const [data, setData] = useState(newDepData)
-  const [searchText, setSearchText] = useState('')
-  const [searchedColumn, setSearchedColumn] = useState('')
+  const [, setSearchText] = useState('')
+  const [, setSearchedColumn] = useState('')
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm()

@@ -17,7 +17,13 @@ interface Props {
     editable: boolean
   }>
   newEmpData: Array<{ key: number; name: string; childData: Emp }>
-  updateEmpData: any
+  updateEmpData: (
+    newUpdatedData: Array<{
+      key: number
+      name: string
+      childData: Emp
+    }>
+  ) => void
 }
 
 const EditableCell = ({
